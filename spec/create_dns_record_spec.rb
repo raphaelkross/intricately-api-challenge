@@ -29,4 +29,9 @@ describe "[POST] dns_records route", :type => :request do
       expect(body).to have_key("id")
   end
 
+  it 'should return bad request if `dns_records` param is missing' do
+    post '/api/v1/dns_records'
+    expect(response).to have_http_status(:bad_request)
+  end
+
 end

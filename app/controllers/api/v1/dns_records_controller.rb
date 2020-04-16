@@ -1,5 +1,22 @@
 class Api::V1::DnsRecordsController < ActionController::API
 
+  def index
+    # Get required param `page`.
+    begin
+      page = params.require(:page)
+    rescue
+      return render json: {
+        text: "`page` parameter is required."
+      }, status: :bad_request
+    end
+
+    # Get included/excluded hostnames as an array.
+    included = params.include?(:included) ? params[:included].split(',') : []
+    excluded = params.include?(:excluded) ? params[:excluded].split(',') : []
+
+    render json: {}, status: :ok
+  end
+
   def create
     # Filter params.
     begin

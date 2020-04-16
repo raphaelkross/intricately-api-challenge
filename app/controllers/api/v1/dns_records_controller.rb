@@ -14,7 +14,26 @@ class Api::V1::DnsRecordsController < ActionController::API
     included = params.include?(:included) ? params[:included].split(',') : []
     excluded = params.include?(:excluded) ? params[:excluded].split(',') : []
 
-    render json: {}, status: :ok
+    # Get filtered records.
+    records = DnsRecord.filter_records(included, excluded, page)
+
+    # Store the formated output.
+    dns_records = []
+
+    # Build the expected response to records and related_hostnames.
+    dns_records = records.map do |record|
+        # Return the expected IP/ID to dns_records.
+        { ip_address: record.ip, id: record.id }
+    end
+
+    # Final object to be returned.
+    results = {
+      total_records: dns_records.size,
+      records: dns_records,
+      related_hostnames: [],
+    }
+
+    render json: results.to_json, status: :ok
   end
 
   def create

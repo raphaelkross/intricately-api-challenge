@@ -42,3 +42,6 @@ dns_hn_12:
 dns_hn_13:
   dns_record_id: 5
   hostname_id: 5
+dns_hn_14:
+  dns_record_id: 5
+  hostname_id: 3

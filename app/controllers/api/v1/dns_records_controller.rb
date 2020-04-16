@@ -67,7 +67,7 @@ class Api::V1::DnsRecordsController < ActionController::API
     end
 
     # Create DNS record.
-    dns_record = DnsRecord.new(dns_record_params[:ip])
+    dns_record = DnsRecord.new({ :ip => dns_record_params[:ip] })
 
     # Find or Create the hostnames.
     hostnames = []

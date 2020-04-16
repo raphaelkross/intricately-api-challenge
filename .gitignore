@@ -6,6 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
+
+# Ignore node_modules
+/node_modules
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

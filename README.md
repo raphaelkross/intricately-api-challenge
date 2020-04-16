@@ -1,4 +1,4 @@
-# README
+# Intricately Rails API Challenge
 
 This is a test API where the user is able to create DNS Records and assign them to specific hostnames, besides that you can filter the records with page, include and exclude filters - featuring a related hostnames functionality.
 
@@ -32,9 +32,19 @@ $ docker-compose run --rm web yarn install
 $ docker-compose up
 
 $ docker-compose exec web ./bin/rails db:create
+
+$ docker-compose exec web ./bin/rails db:migrate
 ```
 
 You can see Rails top page on http://localhost:3000/.
+
+### Running Tests
+
+Use the following commands to run our automated tests.
+
+```ssh
+$ docker-compose exec web bundle exec rspec
+```
 
 ### [POST] /api/v1/dns_records
 

@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_212516) do
+ActiveRecord::Schema.define(version: 2020_04_16_212843) do
 
   create_table "dns_records", force: :cascade do |t|
     t.string "ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "dns_records_hostnames", id: false, force: :cascade do |t|
+    t.integer "dns_record_id", null: false
+    t.integer "hostname_id", null: false
   end
 
   create_table "hostnames", force: :cascade do |t|

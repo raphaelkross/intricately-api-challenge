@@ -1,0 +1,21 @@
+
+dns_1:
+  id: 1
+  ip: "1.1.1.1"
+  hostnames: lorem.com, ipsum.com, dolor.com, amet.com
+dns_2:
+  id: 2
+  ip: "2.2.2.2"
+  hostnames: ipsum.com
+dns_3:
+  id: 3
+  ip: "3.3.3.3"
+  hostnames: ipsum.com, dolor.com, amet.com
+dns_4:
+  id: 4
+  ip: "4.4.4.4"
+  hostnames: ipsum.com, dolor.com, sit.com, amet.com
+dns_5:
+  id: 5
+  ip: "5.5.5.5"
+  hostnames: sit.com

@@ -1,0 +1,16 @@
+
+lorem.com:
+  id: 1
+  hostname: "lorem.com"
+ipsum.com:
+  id: 2
+  hostname: "ipsum.com"
+dolor.com:
+  id: 3
+  hostname: "dolor.com"
+amet.com:
+  id: 4
+  hostname: "amet.com"
+sit.com:
+  id: 5
+  hostname: "sit.com"

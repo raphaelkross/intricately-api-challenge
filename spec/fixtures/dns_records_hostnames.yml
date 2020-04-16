@@ -1,0 +1,44 @@
+# IP "1.1.1.1" relationships
+dns_hn_1:
+  dns_record_id: 1
+  hostname_id: 1
+dns_hn_2:
+  dns_record_id: 1
+  hostname_id: 2
+dns_hn_3:
+  dns_record_id: 1
+  hostname_id: 3
+dns_hn_4:
+  dns_record_id: 1
+  hostname_id: 4
+# IP "2.2.2.2" relationships
+dns_hn_5:
+  dns_record_id: 2
+  hostname_id: 2
+# IP "3.3.3.3" relationships
+dns_hn_6:
+  dns_record_id: 3
+  hostname_id: 2
+dns_hn_7:
+  dns_record_id: 3
+  hostname_id: 3
+dns_hn_8:
+  dns_record_id: 3
+  hostname_id: 4
+# IP "4.4.4.4" relationships
+dns_hn_9:
+  dns_record_id: 4
+  hostname_id: 2
+dns_hn_10:
+  dns_record_id: 4
+  hostname_id: 3
+dns_hn_11:
+  dns_record_id: 4
+  hostname_id: 5
+dns_hn_12:
+  dns_record_id: 4
+  hostname_id: 4
+# IP "5.5.5.5" relationships
+dns_hn_13:
+  dns_record_id: 5
+  hostname_id: 5

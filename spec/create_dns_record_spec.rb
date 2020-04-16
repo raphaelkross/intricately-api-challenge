@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "[POST] dns_records route", :type => :request do
 
+  fixtures :hostnames, :dns_records, :dns_records_hostnames
+
   before do
     body = {
       :dns_records => {

@@ -19,18 +19,38 @@ class Api::V1::DnsRecordsController < ActionController::API
 
     # Store the formated output.
     dns_records = []
+    related_hostnames = Hash.new
 
     # Build the expected response to records and related_hostnames.
     dns_records = records.map do |record|
-        # Return the expected IP/ID to dns_records.
-        { ip_address: record.ip, id: record.id }
+
+      # Enjoy the loop to iterate the related_hostnames response.
+      record.hostnames.map do |hostname|
+        # check if hostname is not in the included filter.
+        if ! included.include?(hostname.hostname)
+          # If not included, check if it already exists at related_hostnames.
+          if ! related_hostnames.key?(hostname.hostname)
+            # If don't exist, create the first entry.
+            related_hostnames[ hostname.hostname ] = {
+              hostname: hostname.hostname,
+              count: 1
+            }
+          else
+            # If exists, increase the count by 1.
+            related_hostnames[ hostname.hostname ][:count] += 1
+          end
+        end
+      end
+
+      # Return the expected IP/ID to dns_records.
+      { ip_address: record.ip, id: record.id }
     end
 
     # Final object to be returned.
     results = {
       total_records: dns_records.size,
       records: dns_records,
-      related_hostnames: [],
+      related_hostnames: related_hostnames.values,
     }
 
     render json: results.to_json, status: :ok
